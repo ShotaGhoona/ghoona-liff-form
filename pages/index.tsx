@@ -7,7 +7,7 @@ export default function Home() {
   const [form, setForm] = useState({ name: "", affiliation: "", email: "" });
 
   useEffect(() => {
-    liff.init({ liffId: "https://miniapp.line.me/2007110734-Ew9Pa1k1" }) 
+    liff.init({ liffId: "2007110734-Ew9Pa1k1" }) 
       .then(() => {
         if (!liff.isLoggedIn()) {
           liff.login();
