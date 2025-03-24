@@ -14,13 +14,13 @@ export default async function handler(req, res) {
 
   try {
     await notion.pages.create({
-      parent: { database_id: databaseId },
-      properties: {
-        名前: { title: [{ text: { content: name } }] },
-        所属: { rich_text: [{ text: { content: affiliation } }] },
-        メール: { email: email },
-        "LINE ID": { rich_text: [{ text: { content: lineId || "なし" } }] },
-      },
+        parent: { database_id: databaseId },
+        properties: {
+            名前: { title: [{ text: { content: name } }] },
+            所属: { rich_text: [{ text: { content: affiliation } }] },
+            email: { email: email },
+            lineID: { rich_text: [{ text: { content: lineId || "なし" } }] },
+        },
     });
 
     res.status(200).json({ message: "Notionに保存完了" });
